@@ -1,0 +1,105 @@
+.surveyCreate {
+    display: flex;
+    flex-flow: column;
+
+    h1 {
+        color: #333; 
+        margin-bottom: 45px;
+    }
+
+    .surveyMaker {
+        font-size: 1em;
+
+        .uiQuestionForm {
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+
+            >div {
+                flex: 1 0 100%;
+                margin-bottom: 15px;
+                text-align: left;
+                font-size: 1.2em;
+            }
+
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                flex: 1 1 100%;
+
+                textarea {
+                    flex: 1 1 100%;
+                    height: 50px;
+                    border: none;
+                    border-radius: 2px;
+                    font-size: 0.9em;
+                    padding: 5px;
+                    box-sizing: border-box;
+                    margin-bottom: 15px;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .answerType {
+                    text-align: left;
+                    margin-bottom: 15px;
+                    input[type="radio"] {
+                        margin-right: 10px;
+                        margin-left: 0px;
+                        &.typeLikert {
+                            margin-left: 30px;
+                        }
+                    }
+    
+                    input.typeLikert:checked ~ .likertTexts {
+                        display: flex;
+                    }
+    
+                    .likertTexts {
+                        display: none;
+                        flex-wrap: wrap;
+                        margin-top: 15px;
+                        justify-content: flex-start;
+
+                        input {
+                            flex: 1;
+                            flex-basis: 100px;
+                            min-width: 100px;
+                            margin-right: 5px;
+                            margin-bottom: 5px;
+                            font-size: 0.9em;
+                            padding: 5px;
+                            &:focus {
+                                outline: none;
+                            }
+                            &:nth-child(5) {
+                                margin-right: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .uiQuestionsList {
+            list-style: none;
+            text-align: left;
+            background-color: #ddd;
+            padding: 15px;
+
+            .answerType {
+                font-size: 0.8em;
+                font-weight: 700;
+                color: var(--orange5);
+                font-style: italic;
+                margin-bottom: 10px;
+            }
+        }
+
+        .btnContainer {
+            flex: 1 0 100%;
+            text-align: right;
+        }
+    }
+}

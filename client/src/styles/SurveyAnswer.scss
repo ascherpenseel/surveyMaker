@@ -1,0 +1,137 @@
+.surveyAnswer {
+    display: flex;
+    flex-flow: column;
+
+    h1 {
+        color: #333;
+        margin-bottom: 45px;
+    }
+
+    .surveyFill {
+        font-size: 1em;
+
+        .uiQuestion {
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+            background-color: #ddd;
+            padding: 25px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+
+            p {
+                flex: 1;
+                margin: 0;
+                margin-bottom: 15px;
+                flex-basis: 100%;
+                text-align: left;
+                font-size: 1.2em;
+            }
+
+            textarea {
+                flex: 1 1 100%;
+                height: 100px;
+                border: none;
+                border-radius: 2px;
+                font-size: 0.9em;
+                padding: 5px;
+                box-sizing: border-box;
+                margin-bottom: 15px;
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .likertScale {
+                flex: 1 1 100%;
+                display: flex;
+                flex-direction: row;
+
+                .likertContainer {
+                    flex: 1 1 100%;
+                    position: relative;
+                    display: table;
+                    cursor: pointer;
+                    height: 70px;
+                    text-align: center;
+                    user-select: none;
+                    margin-right: 5px;
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                    }
+
+                    .likert {
+                        display: table-cell;
+                        vertical-align: middle;
+                        box-sizing: border-box;
+                        border-radius: 4px;
+                        padding: 15px;
+                        height: 100%;
+                        width: 100%;
+                        font-size: 0.9em;
+                        font-weight: 500;
+                    }
+
+                    &:nth-child(1) {
+                        .likert {
+                            background-color: #fff;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        .likert {
+                            background-color: var(--orange1);
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        .likert {
+                            background-color: var(--orange2);
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        .likert {
+                            background-color: var(--orange3);
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        margin-right: 0;
+                        .likert {
+                            background-color: var(--orange4);
+                        }
+                    }
+
+                    &:hover input ~ .likert {
+                        box-shadow: inset 0px 0px 0px 5px #333;
+                    }
+
+                    input:checked ~ .likert {
+                        box-shadow: inset 0px 0px 0px 5px #333;
+                    } 
+                }
+            }
+        }
+    }
+
+    .btnContainer {
+        margin-top: 15px;
+        flex: 1 0 100%;
+        text-align: right;
+        display: flex;
+
+        .email {
+            flex: 1;
+            margin-right: 10px;
+            border: none;
+            padding: 5px 10px;
+            font-size: 0.9em;
+        }
+    }
+}

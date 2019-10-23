@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import './styles/App.scss';
 
 class App extends React.Component {
   
@@ -16,14 +15,15 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.callAPI();
+    const { id } = this.props.match.params;
+    console.log(id);
+    // this.callAPI();
   }
 
   render () {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>

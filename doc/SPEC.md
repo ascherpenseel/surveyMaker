@@ -138,7 +138,7 @@ Required methods besides *render()* are:
 
 #### `getSurveyResults (id)`
 
-A **GET** call to the API at */answers* to load the survey data.
+A **GET** call to the API at */results* to load the survey data.
 
 # Functional specification: *Express App*
 
@@ -156,7 +156,7 @@ We just decided to use four different endpoints with unique request methods.
 
 **Database**: New questions are appended to *questions* file. A new survey is appended to *surveys* file with a new id and references to the ids of all the linked questions.
 
-**Output**: None.
+**Output**: Id of the recently created survey.
 
 #### `/questions`
 
@@ -172,13 +172,13 @@ We just decided to use four different endpoints with unique request methods.
 
 **Method**: POST
 
-**Input**: An array of pairs [question id, {answer}].
+**Input**: An array of answers and the survey id.
 
-**Database**: For each pair: a new answer is appended to *answers* file. The question with the corresponding id is edited at file *questions* to include this new answer id.
+**Database**: New answers are appended to *answers* file. Survey info is retrieved. For each of the questions linked to survey, append a new answer index to that question. Update file *questions*.
 
 **Output**: None.
 
-#### `/answers`
+#### `/results`
 
 **Method**: GET
 

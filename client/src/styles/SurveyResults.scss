@@ -1,0 +1,109 @@
+.surveyResults {
+    display: flex;
+    flex-flow: column;
+
+    h1 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .surveySummary {
+        font-size: 1em;
+        margin-bottom: 50px;
+
+        .uiQuestionResults {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: stretch;
+
+            p {
+                font-size: 1.2em;
+                font-weight: 700;
+                margin-top: 45px;
+            }
+
+            .uiTextAnswers {
+
+                div {
+                    width: 100%;
+                    padding: 10px 15px;
+                    font-size: 0.9em;
+
+                    &.even {
+                        background-color: #ddd;
+                    }
+                    &.odd {
+                        background-color: #bbb;
+                    }
+                }
+                
+            }
+
+            .uiLikertAnswers {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                padding: 10px 30px;
+                align-items: flex-end;
+
+                div {
+                    width: 50px;
+                    border-radius: 4px;
+                    margin-right: 3px;
+                    padding: 5px;
+                    font-size: 0.8em;
+                    font-weight: 700;
+                    color: #333;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+
+                    &:nth-child(5) {
+                        margin-right: 0;
+                    }
+
+                    &.likertBar1 {
+                        background-color: #fff;
+                    }
+
+                    &.likertBar2 {
+                        background-color: var(--orange1);
+                    }
+
+                    &.likertBar3 {
+                        background-color: var(--orange2);
+                    }
+
+                    &.likertBar4 {
+                        background-color: var(--orange3);
+                    }
+
+                    &.likertBar5 {
+                        background-color: var(--orange4);
+                    }
+                }
+            }
+        }
+    }
+
+    .surveyResponses {
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 50px;
+
+        .uiResponses {
+            width: 100%;
+            font-size: 0.9em;
+
+            thead {
+                background-color: #bbb;
+            }   
+            tbody {
+                background-color: #fff;
+            }         
+            td, th {
+                padding: 7px 15px;
+            }
+        }
+    }
+}

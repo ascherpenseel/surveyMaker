@@ -1,0 +1,55 @@
+:root {
+  --orange1: #FFE6CC;
+  --orange2: #FFCC99;
+  --orange3: #FFB366;
+  --orange4: #FF9933;
+  --orange5: #CC6600;
+}
+
+body {
+  margin: 0;
+  background-color: #f2f2f2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 15px 50px;
+  text-align: center;
+  background-color: #e9e9e9;
+}
+
+button {
+  min-width: 100px;
+  padding: 7px 15px;
+  border: 0px;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.9em;
+  font-weight: 500;
+  background-color: #333;
+  cursor: pointer;
+  position: relative;
+}
+
+button:hover {
+  background-color: #777;
+}
+
+button:active, button:visited, button:focus, textarea:focus, input:focus {
+  outline: none;
+}
+
+button:active {
+  top: 2px;
+}
