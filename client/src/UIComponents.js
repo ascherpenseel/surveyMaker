@@ -32,7 +32,16 @@ export function UIQuestionsList (props) {
       {props.list.map((question, index) => (
         <li key={index} index={index}>
           <div className="questionText">{question.text}</div>
-          <div className="answerType">{question.type}</div>
+          {question.type === "text" && (
+            <div className="answerType">{question.type}</div>
+          )}
+          {question.type === "likert" && (
+            <div className="answerType">{question.likert.map((x,i) => {
+              if (i === 0) return `[ ${x}, `;
+              if (i === question.likert.length-1) return `${x} ]`;
+              return `${x}, `;
+            })}</div>
+          )}
           <DeleteIcon className="deleteBtn" onClick={props.onClick}/>
         </li>
       ))}
