@@ -48,23 +48,23 @@ export function UIQuestion (props) {
       {props.question.type === "likert" && (
         <div className="likertScale">
           <label className="likertContainer">
-            <input type="radio" name="radio" data-index="0"/>
+            <input type="radio" name={"radio"+props.index} data-index="0"/>
             <span className="likert">{props.question.likert[0]}</span>
           </label>
           <label className="likertContainer">
-            <input type="radio" name="radio" data-index="1"/>
+            <input type="radio" name={"radio"+props.index} data-index="1"/>
             <span className="likert">{props.question.likert[1]}</span>
           </label>
           <label className="likertContainer">
-            <input type="radio" name="radio" data-index="2"/>
+            <input type="radio" name={"radio"+props.index} data-index="2"/>
             <span className="likert">{props.question.likert[2]}</span>
           </label>
           <label className="likertContainer">
-            <input type="radio" name="radio" data-index="3"/>
+            <input type="radio" name={"radio"+props.index} data-index="3"/>
             <span className="likert">{props.question.likert[3]}</span>
           </label>
           <label className="likertContainer">
-            <input type="radio" name="radio" data-index="4"/>
+            <input type="radio" name={"radio"+props.index} data-index="4"/>
             <span className="likert">{props.question.likert[4]}</span>
           </label>
         </div>
@@ -124,7 +124,7 @@ export function UIResponses (props) {
       <tbody>
         {props.data.map(email => email[1].map((x, index) => (
           <tr key={index}>
-            <td data-email={email[0]}>{email[0]}</td>
+            <td data-email={email[0]}>{email[0] !== "null" ? email[0] : <i>anonymous</i>}</td>
             <td>{x.question}</td>
             <td>{x.answer}</td>
           </tr>

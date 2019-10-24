@@ -95,7 +95,7 @@ class SurveyAnswer extends React.Component {
         {!this.state.sent && ( 
           <div className="surveyFill">
             {this.state.questions.map((question, index) => (
-              <UIQuestion key={index} question={question}/>
+              <UIQuestion key={index} question={question} index={index}/>
             ))}
             <div className="btnContainer">
               <input className="email" placeholder="Your email (optional)"/>

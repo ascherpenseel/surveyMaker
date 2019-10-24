@@ -53,3 +53,8 @@ button:active, button:visited, button:focus, textarea:focus, input:focus {
 button:active {
   top: 2px;
 }
+
+a {
+  color: #333;
+  font-weight: 700;
+}
