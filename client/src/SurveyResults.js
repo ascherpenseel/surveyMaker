@@ -93,6 +93,8 @@ class SurveyResults extends React.Component {
         responsesCount: responsesCount,
         responsesTable: responsesTable
       });
+    }).catch(function(err){
+      alert(`Something went wrong when retrieving the survey results. Please check your api server is working and try again. \n>Error: ${err}`);
     });
   }
 

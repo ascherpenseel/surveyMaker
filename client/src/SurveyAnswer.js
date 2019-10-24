@@ -32,6 +32,8 @@ class SurveyAnswer extends React.Component {
       component.setState({
         questions: component.state.questions.concat(responseQuestions)
       });
+    }).catch(function(err){
+      alert(`Something went wrong when retrieving the survey. Please check your api server is working and try again. \n>Error: ${err}`);
     });
   }
 
@@ -74,6 +76,8 @@ class SurveyAnswer extends React.Component {
     }).then(function(response){
       component.closeSurvey();
       return;
+    }).catch(function(err){
+      alert(`Something went wrong when saving your answers. Please check your api server is working and try again. \n>Error: ${err}`);
     });
   }
 

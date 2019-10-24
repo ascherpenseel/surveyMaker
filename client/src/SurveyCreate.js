@@ -59,6 +59,8 @@ class SurveyCreate extends React.Component {
         resultsUrl: `/results/${surveyID}`,
         published: true
       });
+    }).catch(function(err){
+      alert(`Something went wrong when publishing. Please check your api server is working and try again. \n>Error: ${err}`);
     });
   }
 
