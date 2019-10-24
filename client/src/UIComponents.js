@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export function UIQuestionForm (props) {
   return (
@@ -29,9 +30,10 @@ export function UIQuestionsList (props) {
   return (
     <ul className="uiQuestionsList">
       {props.list.map((question, index) => (
-        <li key={index}>
+        <li key={index} index={index}>
           <div className="questionText">{question.text}</div>
           <div className="answerType">{question.type}</div>
+          <DeleteIcon className="deleteBtn" onClick={props.onClick}/>
         </li>
       ))}
     </ul>

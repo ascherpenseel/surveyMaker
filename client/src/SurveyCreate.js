@@ -30,6 +30,15 @@ class SurveyCreate extends React.Component {
     });
   }
 
+  deleteQuestion (event) {
+    const index = event.target.parentElement.getAttribute('index');
+    let newQuestions = this.state.questions;
+    newQuestions.splice(index,1);
+    this.setState({
+      questions: newQuestions
+    })
+  }
+
   publish () {
     let component = this;
     let newSurvey = new Model.Survey();
@@ -67,7 +76,7 @@ class SurveyCreate extends React.Component {
           {!this.state.published && (
             <div className="surveyMaker">
               <UIQuestionForm onSubmit={this.addQuestion.bind(this)}/>
-              <UIQuestionsList list={this.state.questions}/>
+              <UIQuestionsList list={this.state.questions} onClick={this.deleteQuestion.bind(this)}/>
               <div className="btnContainer">
                 <button className="publishBtn" onClick={this.publish.bind(this)}>Publish</button>
               </div>
